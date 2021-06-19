@@ -1,8 +1,14 @@
+// Library imports
 import React from "react";
-import "./App.css";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-import Users from "./components/Users";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+// Components
+import Users from "./components/Users";
+import Landing from "./components/Users";
+
+//CSS
+import "./App.css";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000",
@@ -16,6 +22,9 @@ function App() {
         <Switch>
           <Route path="/">
             <Users />
+          </Route>
+          <Route path="/landing">
+            <Landing />
           </Route>
         </Switch>
       </Router>
