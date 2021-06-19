@@ -14,6 +14,7 @@ import Users from "./components/Users";
 import Landing from "./components/Landing";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import IsAuthenticated from "./components/IsAuthenticated";
 
 //CSS
 import "./App.css";
@@ -43,9 +44,6 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Switch>
-          <Route exact path="/">
-            <Users />
-          </Route>
           <Route path="/landing">
             <Landing />
           </Route>
@@ -55,6 +53,11 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
+          <IsAuthenticated>
+            <Route path="/users">
+              <Users />
+            </Route>
+          </IsAuthenticated>
         </Switch>
       </Router>
     </ApolloProvider>
