@@ -12,6 +12,7 @@ import { setContext } from "apollo-link-context";
 // Components
 import Users from "./components/Users";
 import Landing from "./components/Landing";
+import Signup from "./pages/Signup";
 
 //CSS
 import "./App.css";
@@ -30,6 +31,7 @@ const authLink = setContext(async (req, { headers }) => {
 });
 
 const link = authLink.concat(httpLink as any);
+
 const client = new ApolloClient({
   link: link as any,
   cache: new InMemoryCache(),
@@ -45,6 +47,9 @@ function App() {
           </Route>
           <Route path="/landing">
             <Landing />
+          </Route>
+          <Route path="/signup">
+            <Signup />
           </Route>
         </Switch>
       </Router>
