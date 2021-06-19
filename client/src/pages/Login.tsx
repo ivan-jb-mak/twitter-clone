@@ -5,30 +5,26 @@ import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
 import { async } from "q";
 
-const SIGNUP_MUTATION = gql`
-  mutation signup($name: String, $email: String!, $password: String!) {
-    signup(name: $name, email: $email, password: $password) {
+const LOGIN_MUTATION = gql`
+  mutation login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
       token
     }
   }
 `;
 
-interface SignupValues {
+interface LoginValues {
   email: string;
   password: string;
-  confirmPassword: string;
-  name: string;
 }
 
-const Signup = () => {
+const Login = () => {
   const history = useHistory();
-  const [signup, { data }] = useMutation(SIGNUP_MUTATION);
+  const [login, { data }] = useMutation(LOGIN_MUTATION);
 
-  const initialValues: SignupValues = {
+  const initialValues: LoginValues = {
     email: "",
     password: "",
-    confirmPassword: "",
-    name: "",
   };
 
   const validationSchema = Yup.object({
@@ -38,27 +34,20 @@ const Signup = () => {
     password: Yup.string()
       .max(20, "Must be 20 characters or less")
       .required("Password Required"),
-    confirmPassword: Yup.string().oneOf(
-      [Yup.ref("password")],
-      "Passwords must match"
-    ),
-    name: Yup.string()
-      .max(15, "Must be 15 characters or less")
-      .required("Name Required"),
   });
 
   return (
     <div>
-      <h1>Signup</h1>
+      <h1>Login</h1>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={async (values, { setSubmitting }) => {
           setSubmitting(true);
-          const response = await signup({
+          const response = await login({
             variables: values,
           });
-          localStorage.setItem("token", response.data.signup.token);
+          localStorage.setItem("token", response.data.login.token);
           setSubmitting(false);
           history.push("/");
         }}
@@ -66,18 +55,10 @@ const Signup = () => {
         <Form>
           <Field name="email" type="text" placeholder="Email" />
           <ErrorMessage name="email" component={"div"} />
-          <Field name="name" type="text" placeholder="Name" />
-          <ErrorMessage name="name" component={"div"} />
           <Field name="password" type="password" placeholder="Password" />
           <ErrorMessage name="password" component={"div"} />
-          <Field
-            name="confirmPassword"
-            type="password"
-            placeholder="Confirm Password"
-          />
-          <ErrorMessage name="confirmPassword" component={"div"} />
           <button type="submit" className="login-button">
-            <span>Sign up</span>
+            <span>Login</span>
           </button>
         </Form>
       </Formik>
@@ -85,4 +66,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;
