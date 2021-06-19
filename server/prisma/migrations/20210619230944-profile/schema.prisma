@@ -4,14 +4,15 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url = "***"
 }
 
-model Tweet {
-  id        Int          @id @default(autoincrement())
-  createdAt DateTime     @default(now())
+model Post {
+  id        Int     @default(autoincrement()) @id
+  title     String
   content   String?
-  author    User?        @relation(fields: [authorId], references: [id])
+  published Boolean @default(false)
+  author    User?   @relation(fields: [authorId], references: [id])
   authorId  Int?
 }
 
@@ -20,8 +21,9 @@ model User {
   email    String  @unique
   password String  @default("")
   name     String?
-  Tweet    Tweet[]
+  posts    Post[]
   Profile  Profile?
+  Tweet    Tweet[]
 }
 
 model Profile {
@@ -35,3 +37,10 @@ model Profile {
   User      User?    @relation(fields: [userId], references: [id])
 }
 
+model Tweet {
+  id        Int          @id @default(autoincrement())
+  createdAt DateTime     @default(now())
+  content   String?
+  author    User?        @relation(fields: [authorId], references: [id])
+  authorId  Int?
+}
