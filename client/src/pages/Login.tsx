@@ -1,9 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { gql, useMutation } from "@apollo/client";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
 import { async } from "q";
+import twitterLogo from "../styles/assets/twitter-logo.png";
 
 const LOGIN_MUTATION = gql`
   mutation login($email: String!, $password: String!) {
@@ -37,8 +39,14 @@ const Login = () => {
   });
 
   return (
-    <div>
-      <h1>Login</h1>
+    <div className="container">
+      <img
+        src={twitterLogo}
+        alt="twitter-logo"
+        style={{ width: "50px" }}
+        className="logo"
+      />
+      <h3>Log in to Fake Twitter</h3>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -62,6 +70,10 @@ const Login = () => {
           </button>
         </Form>
       </Formik>
+      <div className="register">
+        <h4>Don't have an account?</h4>
+        <Link to="/signup">Sign Up</Link>
+      </div>
     </div>
   );
 };
