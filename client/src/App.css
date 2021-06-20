@@ -3,7 +3,7 @@
   --button-hover-color: #228dcf;
 }
 
-@import "./styles/login.css";
+/* @import "./styles/login.css"; */
 
 textarea {
   color: rgb(38, 50, 56);
