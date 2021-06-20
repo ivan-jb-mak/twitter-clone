@@ -7,8 +7,6 @@ type AuthPayload {
   user: User
 }
 
-scalar DateTime
-
 type Mutation {
   createProfile(avatar: String, bio: String, location: String, website: String): Profile
   login(email: String!, password: String!): AuthPayload
@@ -32,7 +30,6 @@ type Query {
 type Tweet {
   author: User
   content: String
-  createdAt: DateTime!
   id: Int!
 }
 

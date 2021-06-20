@@ -6,8 +6,8 @@ export const Tweet = objectType({
     t.model.id()
     t.model.content()
     t.model.author()
-    t.model.createdAt()
-    t.model.likes()
-    t.model.comments()
+    // t.model.createdAt()
+    // t.model.likes()
+    // t.model.comments()
   },
 })
