@@ -47,7 +47,7 @@ const Profile = () => {
               </span>
             </div>
             <div className="avatar">
-              {/* {data.me.Profile?.avatar ? (
+              {data.me.Profile?.avatar ? (
                 <img
                   src={data.me.Profile.avatar}
                   style={{ width: "150px", borderRadius: "50%" }}
@@ -55,8 +55,7 @@ const Profile = () => {
                 />
               ) : (
                 <i className="fa fa-user fa-5x" aria-hidden="true"></i>
-              )} */}
-              <i className="fa fa-user fa-5x" aria-hidden="true"></i>
+              )}
             </div>
             <div className="make-profile">
               {data.me.Profile ? <UpdateProfile /> : <CreateProfile />}
