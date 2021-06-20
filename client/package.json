@@ -12,6 +12,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "apollo-link-context": "^1.0.20",
+    "date-fns": "^2.22.1",
     "formik": "^2.2.9",
     "graphql": "^15.5.0",
     "react": "^17.0.2",
