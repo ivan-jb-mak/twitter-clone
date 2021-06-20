@@ -59,6 +59,7 @@ const Tweet = () => {
         onRequestClose={closeModal}
         contentLabel="Modal"
         style={customStyles}
+        ariaHideApp={false}
       >
         <span className="exit" onClick={closeModal}>
           <i className="fa fa-times" aria-hidden="true"></i>
