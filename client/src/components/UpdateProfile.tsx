@@ -1,4 +1,4 @@
-import { useMutation } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import gql from "graphql-tag";
 import React, { useState } from "react";
@@ -6,14 +6,16 @@ import Modal from "react-modal";
 import { ME_QUERY } from "../pages/Profile";
 import { customStyles } from "../styles/CustomModalStyles";
 
-const CREATE_PROFILE_MUTATION = gql`
-  mutation createProfile(
+const UPDATE_PROFILE_MUTATION = gql`
+  mutation updateProfile(
+    $id: Int!
     $bio: String
     $location: String
     $website: String
     $avatar: String
   ) {
-    createProfile(
+    updateProfile(
+      id: $id
       bio: $bio
       location: $location
       website: $website
@@ -25,22 +27,28 @@ const CREATE_PROFILE_MUTATION = gql`
 `;
 
 interface ProfileValues {
+  id: number;
   bio: string;
   location: string;
   website: string;
   avatar: string;
 }
-const CreateProfile = () => {
-  const [createProfile] = useMutation(CREATE_PROFILE_MUTATION, {
+const UpdateProfile = () => {
+  const { loading, error, data } = useQuery(ME_QUERY);
+  const [updateProfile] = useMutation(UPDATE_PROFILE_MUTATION, {
     refetchQueries: [{ query: ME_QUERY }],
   });
   const [modalIsOpon, setIsOpen] = useState(false);
 
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{error.message}</p>;
+
   const initialValues: ProfileValues = {
-    bio: "",
-    location: "",
-    website: "",
-    avatar: "",
+    id: data.me.Profile.id,
+    bio: data.me.Profile.bio,
+    location: data.me.Profile.location,
+    website: data.me.Profile.website,
+    avatar: data.me.Profile.avatar,
   };
 
   const openModal = () => {
@@ -53,7 +61,7 @@ const CreateProfile = () => {
   return (
     <div>
       <button onClick={openModal} className="edit-button">
-        Create Profile
+        Update Profile
       </button>
       <Modal
         isOpen={modalIsOpon}
@@ -67,7 +75,7 @@ const CreateProfile = () => {
           // validationSchema={validationSchema}
           onSubmit={async (values, { setSubmitting }) => {
             setSubmitting(true);
-            await createProfile({
+            await updateProfile({
               variables: values,
             });
 
@@ -84,7 +92,7 @@ const CreateProfile = () => {
             <ErrorMessage name="website" component={"div"} />
 
             <button type="submit" className="login-button">
-              <span>Create Profile</span>
+              <span>Update Profile</span>
             </button>
           </Form>
         </Formik>
@@ -93,4 +101,4 @@ const CreateProfile = () => {
   );
 };
 
-export default CreateProfile;
+export default UpdateProfile;
