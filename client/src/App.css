@@ -1,6 +1,7 @@
 :root {
-  --main-color: #55abee;
-  --button-hover-color: #228dcf;
+  --main-color: hsl(206, 82%, 63%);
+  --button-hover-color: hsl(203, 72%, 47%);
+  --accent: hsl(205, 25%, 91%);
 }
 
 /* @import "./styles/login.css"; */
