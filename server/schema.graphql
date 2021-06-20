@@ -38,4 +38,5 @@ type User {
   id: Int!
   name: String
   Profile: Profile
+  Tweet: [Tweet!]!
 }

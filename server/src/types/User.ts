@@ -6,7 +6,7 @@ export const User = objectType({
     t.model.id()
     t.model.name()
     t.model.email()
-    t.model.tweets({ pagination: false })
+    t.model.Tweet({ pagination: false })
     t.model.Profile()
   },
 })

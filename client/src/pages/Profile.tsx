@@ -2,6 +2,7 @@ import React from "react";
 import { gql, useQuery } from "@apollo/client";
 import CreateProfile from "../components/CreateProfile";
 import UpdateProfile from "../components/UpdateProfile";
+import LeftNav from "../components/LeftNav";
 import { Link, useHistory } from "react-router-dom";
 import "../styles/primary.css";
 import "../styles/profile.css";
@@ -32,7 +33,9 @@ const Profile = () => {
   return (
     <>
       <div className="primary">
-        <div className="left">Left Nav</div>
+        <div className="left">
+          <LeftNav />
+        </div>
         <div className="profile">
           <div className="profile-info">
             <div className="profile-head">
