@@ -14,6 +14,7 @@ import Users from "./components/Users";
 import Landing from "./components/Landing";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Home from "./pages/Home";
 import IsAuthenticated from "./components/IsAuthenticated";
 import Profile from "./pages/Profile";
 
@@ -55,8 +56,8 @@ function App() {
             <Login />
           </Route>
           <IsAuthenticated>
-            <Route path="/users">
-              <Users />
+            <Route exact path="/">
+              <Home />
             </Route>
             <Route path="/profile">
               <Profile />
