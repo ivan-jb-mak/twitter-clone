@@ -1,10 +1,9 @@
 import { gql, useQuery } from "@apollo/client";
 import React from "react";
 import { useHistory } from "react-router-dom";
-// import AllTweets from "../components/AllTweets";
-// import HomPageTweet from "../components/HomePageTweet";
+import AllTweets from "../components/AllTweets";
+import HomPageTweet from "../components/HomePageTweet";
 import LeftNav from "../components/LeftNav";
-// import PopularTweets from "../components/PopularTweets";
 import "../styles/home.css";
 import "../styles/primary.css";
 
@@ -24,7 +23,7 @@ export const ME_QUERY = gql`
   }
 `;
 
-const Home = () => {
+function Home() {
   const history = useHistory();
   const { loading, error, data } = useQuery(ME_QUERY);
 
@@ -40,17 +39,13 @@ const Home = () => {
           <div className="home-header">
             <h3 className="home-title">Home</h3>
           </div>
-          <h1>tweets</h1>
-          {/* <HomPageTweet />
-          <AllTweets /> */}
+          <HomPageTweet />
+          <AllTweets />
         </div>
-        <div className="right">
-          Right
-          {/* <PopularTweets /> */}
-        </div>
+        <div className="right"></div>
       </div>
     </>
   );
-};
+}
 
 export default Home;
