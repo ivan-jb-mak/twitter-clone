@@ -20,6 +20,7 @@ import Profile from "./pages/Profile";
 
 //CSS
 import "./App.css";
+import SingleTweet from "./pages/SingleTweet";
 
 const httpLink = new HttpLink({ uri: "http://localhost:4000" });
 
@@ -61,6 +62,9 @@ function App() {
             </Route>
             <Route path="/profile">
               <Profile />
+            </Route>
+            <Route path="/tweet/:id">
+              <SingleTweet />
             </Route>
           </IsAuthenticated>
         </Switch>
