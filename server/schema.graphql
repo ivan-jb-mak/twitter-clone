@@ -35,6 +35,7 @@ input LikedTweetWhereUniqueInput {
 type Mutation {
   createComment(content: String!, id: Int!): Comment
   createProfile(avatar: String, bio: String, location: String, website: String): Profile
+  createReply(commentId: Int, content: String!, id: Int!): Comment
   createTweet(content: String): Tweet
   deleteLike(id: Int!): LikedTweet
   likeTweet(id: Int): LikedTweet
