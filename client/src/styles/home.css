@@ -26,6 +26,7 @@
   margin-top: 5px;
   width: 90%;
   padding: 10px;
+  border-bottom: 1px solid var(--accent);
 }
 h3 {
   font-weight: bold;

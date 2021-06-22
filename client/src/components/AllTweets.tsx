@@ -16,6 +16,9 @@ export const TWEETS_QUERY = gql`
       id
       createdAt
       content
+      likes {
+        id
+      }
       author {
         id
         name
