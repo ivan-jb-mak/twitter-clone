@@ -6,6 +6,7 @@ import LeftNav from "../components/LeftNav";
 import { Link, useHistory } from "react-router-dom";
 import "../styles/primary.css";
 import "../styles/profile.css";
+import PopularTweets from "../components/PopularTweets";
 
 export const ME_QUERY = gql`
   query me {
@@ -88,7 +89,9 @@ const Profile = () => {
           </div>
           {/* <LikedTweets tweets={data.me} /> */}
         </div>
-        <div className="right">{/* <PopularTweets /> */}</div>
+        <div className="right">
+          <PopularTweets />
+        </div>
       </div>
     </>
   );
