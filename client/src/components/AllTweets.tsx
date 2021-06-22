@@ -6,6 +6,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ME_QUERY } from "../pages/Profile";
 import "../styles/allTweets.css";
+import DeleteLike from "./DeleteLike";
 // import CreateComment from "./CreateComment";
 // import DeleteLike from "./DeleteLike";
 import LikeTweet from "./LikeTweet";
@@ -92,9 +93,13 @@ const AllTweets = () => {
               .map((t: LikedTweets) => t.tweet.id)
               .includes(tweet.id) ? (
               <span>
-                <span style={{ marginRight: "5px" }}>
-                  <i className="fas fa-thumbs-up" />
-                </span>
+                <DeleteLike
+                  id={
+                    meData.me.likedTweet.filter(
+                      (like: LikedTweets) => like.tweet.id === tweet.id
+                    )[0].id
+                  }
+                />
                 {tweet.likes.length}
               </span>
             ) : (
