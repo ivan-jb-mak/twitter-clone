@@ -115,7 +115,7 @@ export const Mutation = mutationType({
       },
     })
 
-    t.field('likedTweet', {
+    t.field('likeTweet', {
       type: 'LikedTweet',
       args: {
         id: intArg(),

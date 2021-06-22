@@ -5,7 +5,7 @@ import { TWEETS_QUERY } from "./AllTweets";
 
 const LIKE_TWEET_MUTATION = gql`
   mutation likeTweet($id: Int) {
-    likeTweet(id: Int) {
+    likeTweet(id: $id) {
       id
     }
   }

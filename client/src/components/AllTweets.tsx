@@ -8,7 +8,7 @@ import { ME_QUERY } from "../pages/Profile";
 import "../styles/allTweets.css";
 // import CreateComment from "./CreateComment";
 // import DeleteLike from "./DeleteLike";
-// import LikeTweet from "./LikeTweet";
+import LikeTweet from "./LikeTweet";
 
 export const TWEETS_QUERY = gql`
   query TWEETS_QUERY {
@@ -33,23 +33,23 @@ export const TWEETS_QUERY = gql`
 
 const AllTweets = () => {
   const { loading, error, data } = useQuery(TWEETS_QUERY);
-  // const {
-  //   loading: meLoading,
-  //   error: meError,
-  //   data: meData,
-  // } = useQuery(ME_QUERY);
+  const {
+    loading: meLoading,
+    error: meError,
+    data: meData,
+  } = useQuery(ME_QUERY);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error.message}</p>;
 
-  // if (meLoading) return <p>Loading...</p>;
-  // if (meError) return <p>{meError.message}</p>;
+  if (meLoading) return <p>Loading...</p>;
+  if (meError) return <p>{meError.message}</p>;
 
   interface AllTweets {
-    // id: number;
+    id: number;
     content: string;
     createdAt: Date;
-    // likes: [];
+    likes: [];
     // comments: [];
     author: {
       // id: number;
@@ -87,6 +87,23 @@ const AllTweets = () => {
             </p>
           </div>
           <p>{tweet.content}</p>
+          <div className="likes">
+            {meData.me.likedTweet
+              .map((t: LikedTweets) => t.tweet.id)
+              .includes(tweet.id) ? (
+              <span>
+                <span style={{ marginRight: "5px" }}>
+                  <i className="fas fa-thumbs-up" />
+                </span>
+                {tweet.likes.length}
+              </span>
+            ) : (
+              <span>
+                <LikeTweet id={tweet.id} />
+                {tweet.likes.length}
+              </span>
+            )}
+          </div>
         </div>
       ))}
     </div>
