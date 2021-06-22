@@ -145,49 +145,24 @@ export const Mutation = mutationType({
         })
       },
     })
-    // t.field('createDraft', {
-    //   type: 'Post',
-    //   args: {
-    //     title: stringArg({ nullable: false }),
-    //     content: stringArg(),
-    //   },
-    //   resolve: (parent, { title, content }, ctx) => {
-    //     const userId = getUserId(ctx)
-    //     if (!userId) throw new Error('Could not authenticate user.')
-    //     return ctx.prisma.post.create({
-    //       data: {
-    //         title,
-    //         content,
-    //         published: false,
-    //         author: { connect: { id: Number(userId) } },
-    //       },
-    //     })
-    //   },
-    // })
 
-    // t.field('deletePost', {
-    //   type: 'Post',
-    //   nullable: true,
-    //   args: { id: intArg({ nullable: false }) },
-    //   resolve: (parent, { id }, ctx) => {
-    //     return ctx.prisma.post.delete({
-    //       where: {
-    //         id,
-    //       },
-    //     })
-    //   },
-    // })
-
-    // t.field('publish', {
-    //   type: 'Post',
-    //   nullable: true,
-    //   args: { id: intArg({ nullable: false }) },
-    //   resolve: (parent, { id }, ctx) => {
-    //     return ctx.prisma.post.update({
-    //       where: { id },
-    //       data: { published: true },
-    //     })
-    //   },
-    // })
+    t.field('createComment', {
+      type: 'Comment',
+      args: {
+        content: stringArg({ nullable: false }),
+        id: intArg({ nullable: false }),
+      },
+      resolve: (parent, { content, id }, ctx) => {
+        const userId = getUserId(ctx)
+        if (!userId) throw new Error('Could not authenticate user.')
+        return ctx.prisma.comment.create({
+          data: {
+            content,
+            User: { connect: { id: Number(userId) } },
+            Tweet: { connect: { id: Number(id) } },
+          },
+        })
+      },
+    })
   },
 })

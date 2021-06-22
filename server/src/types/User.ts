@@ -9,5 +9,6 @@ export const User = objectType({
     t.model.Tweet({ pagination: false })
     t.model.Profile()
     t.model.likedTweet()
+    t.model.comments()
   },
 })
