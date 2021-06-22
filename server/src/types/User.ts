@@ -8,5 +8,6 @@ export const User = objectType({
     t.model.email()
     t.model.Tweet({ pagination: false })
     t.model.Profile()
+    t.model.likedTweet()
   },
 })

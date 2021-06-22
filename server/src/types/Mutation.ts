@@ -114,6 +114,23 @@ export const Mutation = mutationType({
         })
       },
     })
+
+    t.field('likedTweet', {
+      type: 'LikedTweet',
+      args: {
+        id: intArg(),
+      },
+      resolve: (parent, { id }, ctx) => {
+        const userId = getUserId(ctx)
+        if (!userId) throw new Error('Could not authenticate user.')
+        return ctx.prisma.likedTweet.create({
+          data: {
+            tweet: { connect: { id: Number(id) } },
+            User: { connect: { id: Number(userId) } },
+          },
+        })
+      },
+    })
     // t.field('createDraft', {
     //   type: 'Post',
     //   args: {
