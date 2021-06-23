@@ -48,7 +48,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Switch>
-          <Route path="/landing">
+          <Route exact path="/">
             <Landing />
           </Route>
           <Route path="/signup">
@@ -58,7 +58,7 @@ function App() {
             <Login />
           </Route>
           <IsAuthenticated>
-            <Route exact path="/">
+            <Route path="/home">
               <Home />
             </Route>
             <Route path="/profile">
