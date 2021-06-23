@@ -17,10 +17,11 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import IsAuthenticated from "./components/IsAuthenticated";
 import Profile from "./pages/Profile";
+import SingleTweet from "./pages/SingleTweet";
+import SingleUser from "./pages/SingleUser";
 
 //CSS
 import "./App.css";
-import SingleTweet from "./pages/SingleTweet";
 
 const httpLink = new HttpLink({ uri: "http://localhost:4000" });
 
@@ -65,6 +66,9 @@ function App() {
             </Route>
             <Route path="/tweet/:id">
               <SingleTweet />
+            </Route>
+            <Route path="/user/:id">
+              <SingleUser />
             </Route>
           </IsAuthenticated>
         </Switch>

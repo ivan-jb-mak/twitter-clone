@@ -1,22 +1,40 @@
-import React from "react";
 import { gql, useQuery } from "@apollo/client";
-import CreateProfile from "../components/CreateProfile";
-import UpdateProfile from "../components/UpdateProfile";
-import LeftNav from "../components/LeftNav";
+import React from "react";
 import { Link, useHistory } from "react-router-dom";
+import CreateProfile from "../components/CreateProfile";
+import Following from "../components/Following";
+import LeftNav from "../components/LeftNav";
+import LikedTweets from "../components/LikedTweets";
+import PopularTweets from "../components/PopularTweets";
+import UpdateProfile from "../components/UpdateProfile";
 import "../styles/primary.css";
 import "../styles/profile.css";
-import PopularTweets from "../components/PopularTweets";
 
 export const ME_QUERY = gql`
   query me {
     me {
       id
       name
+      Following {
+        id
+        followId
+        name
+        avatar
+      }
       likedTweet {
         id
         tweet {
           id
+          content
+          createdAt
+          author {
+            id
+            name
+            Profile {
+              id
+              avatar
+            }
+          }
         }
       }
       Profile {
@@ -36,7 +54,6 @@ const Profile = () => {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error.message}</p>;
-
   return (
     <>
       <div className="primary">
@@ -82,12 +99,11 @@ const Profile = () => {
               </p>
             ) : null}
             <div className="followers">
-              {/* <Following /> */}
-              <p>200 following</p>
+              <Following />
               <p>384 followers</p>
             </div>
           </div>
-          {/* <LikedTweets tweets={data.me} /> */}
+          <LikedTweets tweets={data.me} />
         </div>
         <div className="right">
           <PopularTweets />

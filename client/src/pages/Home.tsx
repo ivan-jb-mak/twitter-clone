@@ -24,7 +24,7 @@ export const ME_QUERY = gql`
   }
 `;
 
-function Home() {
+const Home = () => {
   const history = useHistory();
   const { loading, error, data } = useQuery(ME_QUERY);
 
@@ -49,6 +49,6 @@ function Home() {
       </div>
     </>
   );
-}
+};
 
 export default Home;

@@ -8,8 +8,6 @@ import { ME_QUERY } from "../pages/Profile";
 import "../styles/allTweets.css";
 import CreateComment from "./CreateComment";
 import DeleteLike from "./DeleteLike";
-// import CreateComment from "./CreateComment";
-// import DeleteLike from "./DeleteLike";
 import LikeTweet from "./LikeTweet";
 
 export const TWEETS_QUERY = gql`
@@ -36,7 +34,7 @@ export const TWEETS_QUERY = gql`
   }
 `;
 
-const AllTweets = () => {
+export default function AllTweets() {
   const { loading, error, data } = useQuery(TWEETS_QUERY);
   const {
     loading: meLoading,
@@ -57,7 +55,7 @@ const AllTweets = () => {
     likes: [];
     comments: [];
     author: {
-      // id: number;
+      id: number;
       name: string;
       Profile: {
         avatar: string;
@@ -83,7 +81,9 @@ const AllTweets = () => {
                 style={{ width: "40px", borderRadius: "50%" }}
                 alt="avatar"
               />
-              <h4 className="name">{tweet.author.name} </h4>
+              <Link to={`/user/${tweet.author.id}`}>
+                <h4 className="name">{tweet.author.name} </h4>
+              </Link>
               <p className="date-time">
                 {formatDistance(
                   subDays(new Date(tweet.createdAt), 0),
@@ -128,6 +128,4 @@ const AllTweets = () => {
       ))}
     </div>
   );
-};
-
-export default AllTweets;
+}
