@@ -57,6 +57,8 @@ interface CommentType {
 const SingleTweet = () => {
   const history = useHistory();
   const { id } = useParams<ParamType>();
+  const noAvatarUrl =
+    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
 
   const { loading, error, data } = useQuery(TWEET_QUERY, {
     variables: { id: parseInt(id) },
@@ -85,11 +87,19 @@ const SingleTweet = () => {
               marginLeft: "10px",
             }}
           >
-            <img
-              src={data.tweet.author.Profile.avatar}
-              style={{ width: "40px", borderRadius: "50%" }}
-              alt="avatar"
-            />
+            {data.tweet.author.Profile?.avatar ? (
+              <img
+                src={data.tweet.author.Profile.avatar}
+                style={{ width: "40px", borderRadius: "50%" }}
+                alt="avatar"
+              />
+            ) : (
+              <img
+                src={noAvatarUrl}
+                style={{ width: "40px", borderRadius: "50%" }}
+                alt="avatar"
+              />
+            )}
             <h5>{data.tweet.author.name}</h5>
           </div>
           <p
@@ -113,17 +123,29 @@ const SingleTweet = () => {
                   marginLeft: "10px",
                 }}
               >
-                <img
-                  src={comment.User.Profile.avatar}
-                  style={{ width: "40px", borderRadius: "50%" }}
-                  alt="avatar"
-                />
+                {comment.User.Profile?.avatar ? (
+                  <img
+                    src={comment.User.Profile.avatar}
+                    style={{ width: "40px", borderRadius: "50%" }}
+                    alt="avatar"
+                  />
+                ) : (
+                  <img
+                    src={noAvatarUrl}
+                    style={{ width: "40px", borderRadius: "50%" }}
+                    alt="avatar"
+                  />
+                )}
                 <h5>{comment.User.name}</h5>
               </div>
               <p>{comment.content}</p>
               <CreateReply
                 name={comment.User.name}
-                avatar={comment.User.Profile.avatar}
+                avatar={
+                  comment.User.Profile?.avatar
+                    ? comment.User.Profile?.avatar
+                    : noAvatarUrl
+                }
                 id={data.tweet.id}
                 comment={comment.content}
                 commentId={comment.id}

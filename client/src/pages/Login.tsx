@@ -1,10 +1,8 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { gql, useMutation } from "@apollo/client";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
-import { async } from "q";
 import twitterLogo from "../styles/assets/twitter-logo.png";
 import "../styles/login.css";
 
@@ -60,7 +58,7 @@ const Login = () => {
           });
           localStorage.setItem("token", response.data.login.token);
           setSubmitting(false);
-          history.push("/");
+          history.push("/home");
         }}
       >
         <Form>

@@ -34,6 +34,28 @@ export const TWEETS_QUERY = gql`
   }
 `;
 
+interface AllTweets {
+  id: number;
+  content: string;
+  createdAt: Date;
+  likes: [];
+  comments: [];
+  author: {
+    id: number;
+    name: string;
+    Profile: {
+      avatar: string;
+    };
+  };
+}
+
+interface LikedTweets {
+  id: number;
+  tweet: {
+    id: number;
+  };
+}
+
 export default function AllTweets() {
   const { loading, error, data } = useQuery(TWEETS_QUERY);
   const {
@@ -48,27 +70,8 @@ export default function AllTweets() {
   if (meLoading) return <p>Loading...</p>;
   if (meError) return <p>{meError.message}</p>;
 
-  interface AllTweets {
-    id: number;
-    content: string;
-    createdAt: Date;
-    likes: [];
-    comments: [];
-    author: {
-      id: number;
-      name: string;
-      Profile: {
-        avatar: string;
-      };
-    };
-  }
-
-  interface LikedTweets {
-    id: number;
-    tweet: {
-      id: number;
-    };
-  }
+  const noAvatarUrl =
+    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
 
   return (
     <div>
@@ -76,11 +79,19 @@ export default function AllTweets() {
         <div className="tweet-container">
           <Link to={`/tweet/${tweet.id}`}>
             <div className="tweet-header">
-              <img
-                src={tweet.author.Profile.avatar}
-                style={{ width: "40px", borderRadius: "50%" }}
-                alt="avatar"
-              />
+              {tweet.author.Profile?.avatar ? (
+                <img
+                  src={tweet.author.Profile.avatar}
+                  style={{ width: "40px", borderRadius: "50%" }}
+                  alt="avatar"
+                />
+              ) : (
+                <img
+                  src={noAvatarUrl}
+                  style={{ width: "40px", borderRadius: "50%" }}
+                  alt="avatar"
+                />
+              )}
               <Link to={`/user/${tweet.author.id}`}>
                 <h4 className="name">{tweet.author.name} </h4>
               </Link>
@@ -116,7 +127,11 @@ export default function AllTweets() {
             )}
             <span style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
               <CreateComment
-                avatar={tweet.author.Profile.avatar}
+                avatar={
+                  tweet.author.Profile?.avatar
+                    ? tweet.author.Profile.avatar
+                    : noAvatarUrl
+                }
                 name={tweet.author.name}
                 tweet={tweet.content}
                 id={tweet.id}

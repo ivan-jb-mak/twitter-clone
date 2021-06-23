@@ -54,6 +54,10 @@ const Profile = () => {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error.message}</p>;
+
+  const noAvatarUrl =
+    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
+
   return (
     <>
       <div className="primary">
@@ -78,7 +82,11 @@ const Profile = () => {
                   alt="avatar"
                 />
               ) : (
-                <i className="fa fa-user fa-5x" aria-hidden="true"></i>
+                <img
+                  src={noAvatarUrl}
+                  style={{ width: "150px", borderRadius: "50%" }}
+                  alt="avatar"
+                />
               )}
             </div>
             <div className="make-profile">

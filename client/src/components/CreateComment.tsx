@@ -56,6 +56,10 @@ const CreateComment = ({ tweet, avatar, name, id }: Props) => {
   const closeModal = () => {
     setIsOpen(false);
   };
+
+  const noAvatarUrl =
+    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
+
   return (
     <div>
       <span onClick={openModal}>
@@ -111,11 +115,19 @@ const CreateComment = ({ tweet, avatar, name, id }: Props) => {
           }}
         >
           <Form>
-            <img
-              src={data.me.Profile?.avatar}
-              style={{ width: "40px", borderRadius: "50%" }}
-              alt="avatar"
-            />
+            {data.me.Profile?.avatar ? (
+              <img
+                src={data.me.Profile.avatar}
+                style={{ width: "40px", borderRadius: "50%" }}
+                alt="avatar"
+              />
+            ) : (
+              <img
+                src={noAvatarUrl}
+                style={{ width: "40px", borderRadius: "50%" }}
+                alt="avatar"
+              />
+            )}
             <Field
               name="content"
               type="text"

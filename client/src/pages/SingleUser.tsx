@@ -60,6 +60,9 @@ const SingleUser = () => {
     (follow: any) => follow.followId === data.user.id
   );
 
+  const noAvatarUrl =
+    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
+
   return (
     <>
       <div className="primary">
@@ -84,7 +87,11 @@ const SingleUser = () => {
                   alt="avatar"
                 />
               ) : (
-                <i className="fa fa-user fa-5x" aria-hidden="true"></i>
+                <img
+                  src={noAvatarUrl}
+                  style={{ width: "150px", borderRadius: "50%" }}
+                  alt="avatar"
+                />
               )}
             </div>
             <div className="make-profile">
@@ -94,7 +101,11 @@ const SingleUser = () => {
                 <FollowUser
                   id={data.user.id}
                   name={data.user.name}
-                  avatar={data.user.Profile.avatar}
+                  avatar={
+                    data.user.Profile?.avatar
+                      ? data.user.Profile.avatar
+                      : noAvatarUrl
+                  }
                 />
               )}
             </div>

@@ -71,7 +71,7 @@ const Signup = () => {
           });
           localStorage.setItem("token", response.data.signup.token);
           setSubmitting(false);
-          history.push("/");
+          history.push("/home");
         }}
       >
         <Form>

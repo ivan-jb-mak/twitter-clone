@@ -19,17 +19,27 @@ interface AllTweets {
 }
 
 export default function LikedTweets(tweets: any) {
+  const noAvatarUrl =
+    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
+
   return (
     <div>
       {tweets.tweets.likedTweet.map((tweet: AllTweets) => (
         <div className="tweet-container" key={tweet.id}>
           <div className="tweet-header">
-            <img
-              src={tweet.tweet.author?.Profile?.avatar}
-              style={{ width: "40px", borderRadius: "50%" }}
-              alt="avatar"
-            />
-
+            {tweet.tweet.author?.Profile?.avatar ? (
+              <img
+                src={tweet.tweet.author?.Profile?.avatar}
+                style={{ width: "40px", borderRadius: "50%" }}
+                alt="avatar"
+              />
+            ) : (
+              <img
+                src={noAvatarUrl}
+                style={{ width: "40px", borderRadius: "50%" }}
+                alt="avatar"
+              />
+            )}
             <Link to={`/user/${tweet.tweet.author?.id}`}>
               <h4 className="name">{tweet.tweet.author?.name} </h4>
             </Link>

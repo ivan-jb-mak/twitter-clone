@@ -11,7 +11,7 @@ const LeftNav = () => {
       <Link to="/users">
         <img src={favicon} alt="logo" style={{ width: "40px" }} />
       </Link>
-      <Link to="/">
+      <Link to="/home">
         <h2>
           <i className="fa fa-home" aria-hidden="true" />{" "}
           <span className="title">Home</span>

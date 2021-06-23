@@ -30,7 +30,7 @@ interface Tweet {
   content: string;
   author: {
     Profile: {
-      avatar: string;
+      avatar: string | null;
     };
   };
   likes: {
@@ -51,6 +51,9 @@ const PopularTweets = () => {
     })
     .slice(0, 6);
 
+  const noAvatarUrl =
+    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
+
   return (
     <div className="popular-tweets">
       <h3 className="trending">Trending</h3>
@@ -58,11 +61,19 @@ const PopularTweets = () => {
         <div className="popular-tweet-container" key={tweet.id}>
           <div className="date-title">
             <div className="title-logo">
-              <img
-                src={tweet.author.Profile.avatar}
-                style={{ width: "40px", borderRadius: "50%" }}
-                alt="avatar"
-              />
+              {tweet.author.Profile?.avatar ? (
+                <img
+                  src={tweet.author.Profile.avatar}
+                  style={{ width: "40px", borderRadius: "50%" }}
+                  alt="avatar"
+                />
+              ) : (
+                <img
+                  src={noAvatarUrl}
+                  style={{ width: "40px", borderRadius: "50%" }}
+                  alt="avatar"
+                />
+              )}
               <p className="tweet-content">{tweet.content}</p>
             </div>
             <p className="date">
