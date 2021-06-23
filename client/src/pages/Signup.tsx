@@ -52,12 +52,14 @@ const Signup = () => {
 
   return (
     <div className="container">
-      <img
-        src={twitterLogo}
-        alt="twitter-logo"
-        style={{ width: "50px" }}
-        className="logo"
-      />
+      <Link to="/">
+        <img
+          src={twitterLogo}
+          alt="twitter-logo"
+          style={{ width: "50px" }}
+          className="logo"
+        />
+      </Link>
       <h3>Sign Up for Fake Twitter</h3>
       <Formik
         initialValues={initialValues}

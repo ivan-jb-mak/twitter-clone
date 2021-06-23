@@ -31,7 +31,14 @@ const Landing = () => {
         </div>
 
         <div className="center">
-          <img src={twitterLogo} alt="logo" style={{ width: "50px" }} />
+          <Link to="/">
+            <img
+              src={twitterLogo}
+              alt="twitter-logo"
+              style={{ width: "50px" }}
+              className="logo"
+            />
+          </Link>
           <h1>
             See what's happening in
             <br />
