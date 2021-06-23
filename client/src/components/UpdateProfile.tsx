@@ -78,6 +78,9 @@ const UpdateProfile = () => {
     setImageLoading(false);
   };
 
+  const noAvatarUrl =
+    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
+
   return (
     <div>
       <button onClick={openModal} className="edit-button">
@@ -113,11 +116,12 @@ const UpdateProfile = () => {
               </span>
             ) : (
               <span onClick={() => inputFile.current.click()}>
-                <i
-                  className="fa fa-user fa-5x"
-                  aria-hidden="true"
+                <img
+                  src={noAvatarUrl}
+                  style={{ width: "150px", borderRadius: "50%" }}
+                  alt="avatar"
                   onClick={() => inputFile.current.click()}
-                ></i>
+                />
               </span>
             )}
           </>

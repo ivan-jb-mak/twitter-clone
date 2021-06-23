@@ -8,7 +8,7 @@ import Tweet from "./Tweet";
 const LeftNav = () => {
   return (
     <div>
-      <Link to="/users">
+      <Link to="/home">
         <img src={favicon} alt="logo" style={{ width: "40px" }} />
       </Link>
       <Link to="/home">
