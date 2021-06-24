@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import twitterLogo from "../styles/assets/twitter-logo.png";
+// import twitterLogo from "../styles/assets/twitter-logo.png";
+import twitterLogo from "../styles/assets/twitter-logo-white.png";
 import "../styles/landing.css";
 
 const Landing = () => {
@@ -8,26 +9,7 @@ const Landing = () => {
     <div className="main">
       <div className="wrapper">
         <div className="left">
-          <div className="items-wrapper">
-            <div className="item">
-              <span className="icon">
-                <i className="fa fa-search" aria-hidden="true"></i>
-              </span>
-              <span className="label">Follow your interests.</span>
-            </div>
-            <div className="item">
-              <span className="icon">
-                <i className="fa fa-user" aria-hidden="true"></i>
-              </span>
-              <span className="label">Hear what people are talking about.</span>
-            </div>
-            <div className="item">
-              <span className="icon">
-                <i className="fa fa-comment" aria-hidden="true"></i>
-              </span>
-              <span className="label">Join the conversation.</span>
-            </div>
-          </div>
+       
         </div>
 
         <div className="center">
@@ -39,12 +21,10 @@ const Landing = () => {
               className="logo"
             />
           </Link>
-          <h1>
-            See what's happening in
-            <br />
-            the world right now
+          <h1 className="main-heading">
+            Happening now
           </h1>
-          <span>Join Twitter Today.</span>
+          <span className="sub-heading">Join Twitter today.</span>
           <Link to="/signup" className="btn-sign-up">
             Sign up
           </Link>
