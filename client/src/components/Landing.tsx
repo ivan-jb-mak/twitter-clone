@@ -8,9 +8,7 @@ const Landing = () => {
   return (
     <div className="main">
       <div className="wrapper">
-        <div className="left">
-       
-        </div>
+        <div className="left"></div>
 
         <div className="center">
           <Link to="/">
@@ -21,9 +19,7 @@ const Landing = () => {
               className="logo"
             />
           </Link>
-          <h1 className="main-heading">
-            Happening now
-          </h1>
+          <h1 className="main-heading">Happening now</h1>
           <span className="sub-heading">Join Twitter today.</span>
           <Link to="/signup" className="btn-sign-up">
             Sign up

@@ -74,7 +74,6 @@
 
 .main .center .btn-login {
   display: block;
-
   text-align: center;
 }
 
@@ -121,4 +120,11 @@
 .main .wrapper .logo {
   margin-top: 150px;
   margin-left: 0;
+}
+
+@media (max-width: 1200px) {
+  .main .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
 }

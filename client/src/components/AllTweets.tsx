@@ -92,7 +92,9 @@ export default function AllTweets() {
                   alt="avatar"
                 />
               )}
-              <Link to={`/user/${tweet.author.id}`}>
+              <Link
+                to={tweet.author.name ? `/user/${tweet.author.id}` : "/profile"}
+              >
                 <h4 className="name">{tweet.author.name} </h4>
               </Link>
               <p className="date-time">

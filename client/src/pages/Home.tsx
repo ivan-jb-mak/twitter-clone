@@ -2,7 +2,7 @@ import { gql, useQuery } from "@apollo/client";
 import React from "react";
 import { useHistory } from "react-router-dom";
 import AllTweets from "../components/AllTweets";
-import HomPageTweet from "../components/HomePageTweet";
+import HomePageTweet from "../components/HomePageTweet";
 import LeftNav from "../components/LeftNav";
 import PopularTweets from "../components/PopularTweets";
 import "../styles/home.css";
@@ -40,7 +40,7 @@ const Home = () => {
           <div className="home-header">
             <h3 className="home-title">Home</h3>
           </div>
-          <HomPageTweet />
+          <HomePageTweet />
           <AllTweets />
         </div>
         <div className="right">
