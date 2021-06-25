@@ -21,12 +21,14 @@ const Landing = () => {
           </Link>
           <h1 className="main-heading">Happening now</h1>
           <span className="sub-heading">Join Twitter today.</span>
-          <Link to="/signup" className="btn-sign-up">
-            Sign up
-          </Link>
-          <Link to="/login" className="btn-login">
-            Log in
-          </Link>
+          <div className="buttons">
+            <Link to="/signup" className="btn-sign-up">
+              Sign up
+            </Link>
+            <Link to="/login" className="btn-login">
+              Log in
+            </Link>
+          </div>
         </div>
       </div>
     </div>
