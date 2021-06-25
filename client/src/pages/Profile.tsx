@@ -1,4 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
+import { monthsInYear } from "date-fns/esm/fp";
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import CreateProfile from "../components/CreateProfile";
@@ -57,6 +58,14 @@ const Profile = () => {
   const history = useHistory();
   const { loading, error, data } = useQuery(ME_QUERY);
 
+  const joinedDate = (date: string) => {
+    const rawDate = new Date(`${date}`);
+    const year = rawDate.getFullYear();
+    const month = rawDate.toLocaleString("default", { month: "long" });
+    const monthYear = month + " " + year;
+    return monthYear;
+  };
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error.message}</p>;
 
@@ -112,8 +121,7 @@ const Profile = () => {
                 </Link>
               </p>
             ) : null}
-            <div>Joined {data.me.Profile.createdAt}</div>
-            {console.log(data.me.Profile.createdAt)}
+            <div>Joined {joinedDate(data.me.Profile.createdAt)}</div>
             <div className="followers">
               <Following />
               <p>384 followers</p>
