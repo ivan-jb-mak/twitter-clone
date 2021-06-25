@@ -10,16 +10,18 @@ const UPDATE_PROFILE = gql`
   mutation updateProfile(
     $id: Int!
     $bio: String
-    $location: String
+    $handle: String
     $website: String
     $avatar: String
+    $wallpaper: String
   ) {
     updateProfile(
       id: $id
       bio: $bio
-      location: $location
+      handle: $handle
       website: $website
       avatar: $avatar
+      wallpaper: $wallpaper
     ) {
       id
     }
@@ -29,9 +31,10 @@ const UPDATE_PROFILE = gql`
 interface ProfileValues {
   id: number;
   bio: string;
-  location: string;
+  handle: string;
   website: string;
   avatar: string;
+  wallpaper: string;
 }
 const UpdateProfile = () => {
   const inputFile = useRef<HTMLInputElement | null>(null);
@@ -50,9 +53,10 @@ const UpdateProfile = () => {
   const initialValues: ProfileValues = {
     id: data.me.Profile.id,
     bio: data.me.Profile.bio,
-    location: data.me.Profile.location,
+    handle: data.me.Profile.handle,
     website: data.me.Profile.website,
     avatar: data.me.Profile.avatar,
+    wallpaper: data.me.Profile.wallpaper,
   };
 
   const openModal = () => {
@@ -142,8 +146,8 @@ const UpdateProfile = () => {
           <Form>
             <Field name="bio" type="text" as="textarea" placeholder="Bio" />
             <ErrorMessage name="bio" component={"div"} />
-            <Field name="location" type="location" placeholder="Location" />
-            <ErrorMessage name="location" component={"div"} />
+            <Field name="handle" type="handle" placeholder="handle" />
+            <ErrorMessage name="handle" component={"div"} />
             <Field name="website" type="website" placeholder="Website" />
             <ErrorMessage name="website" component={"div"} />
 

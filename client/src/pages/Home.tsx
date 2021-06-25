@@ -16,9 +16,10 @@ export const ME_QUERY = gql`
       Profile {
         id
         bio
-        location
+        handle
         website
         avatar
+        wallpaper
       }
     }
   }

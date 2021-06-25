@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url = "***"
 }
 
 model Tweet {
@@ -43,6 +43,7 @@ model Profile {
   createdAt DateTime @default(now())
   bio       String?
   handle    String?
+  bio2 String?
   website   String?
   avatar    String?
   wallpaper String?

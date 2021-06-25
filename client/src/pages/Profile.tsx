@@ -40,9 +40,10 @@ export const ME_QUERY = gql`
       Profile {
         id
         bio
-        location
+        handle
         website
         avatar
+        wallpaper
       }
     }
   }
@@ -94,6 +95,8 @@ const Profile = () => {
             </div>
 
             <h3 className="name">{data.me.name}</h3>
+            <h3 className="name">{data.me.Profile.handle}</h3>
+            <h4 className="name">{data.me.Profile.bio}</h4>
 
             {data.me.Profile ? (
               <p>

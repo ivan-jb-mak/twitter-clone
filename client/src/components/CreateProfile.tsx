@@ -9,13 +9,13 @@ import { customStyles } from "../styles/CustomModalStyles";
 const CREATE_PROFILE_MUTATION = gql`
   mutation createProfile(
     $bio: String
-    $location: String
+    $handle: String
     $website: String
     $avatar: String
   ) {
     createProfile(
       bio: $bio
-      location: $location
+      handle: $handle
       website: $website
       avatar: $avatar
     ) {
@@ -26,7 +26,7 @@ const CREATE_PROFILE_MUTATION = gql`
 
 interface ProfileValues {
   bio: string;
-  location: string;
+  handle: string;
   website: string;
   avatar: string;
 }
@@ -38,7 +38,7 @@ const CreateProfile = () => {
 
   const initialValues: ProfileValues = {
     bio: "",
-    location: "",
+    handle: "",
     website: "",
     avatar: "",
   };
@@ -78,8 +78,8 @@ const CreateProfile = () => {
           <Form>
             <Field name="bio" type="text" as="textarea" placeholder="Bio" />
             <ErrorMessage name="bio" component={"div"} />
-            <Field name="location" type="location" placeholder="Location" />
-            <ErrorMessage name="location" component={"div"} />
+            <Field name="handle" type="handle" placeholder="handle" />
+            <ErrorMessage name="handle" component={"div"} />
             <Field name="website" type="website" placeholder="Website" />
             <ErrorMessage name="website" component={"div"} />
 

@@ -5,8 +5,9 @@ export const Profile = objectType({
   definition(t) {
     t.model.id()
     t.model.bio()
-    t.model.location()
+    t.model.handle()
     t.model.website()
     t.model.avatar()
+    t.model.wallpaper()
   },
 })

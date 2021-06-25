@@ -46,7 +46,7 @@ input LikedTweetWhereUniqueInput {
 
 type Mutation {
   createComment(content: String!, id: Int!): Comment
-  createProfile(avatar: String, bio: String, location: String, website: String): Profile
+  createProfile(avatar: String, bio: String, handle: String, website: String): Profile
   createReply(commentId: Int, content: String!, id: Int!): Comment
   createTweet(content: String): Tweet
   deleteFollow(id: Int!): Following
@@ -55,14 +55,15 @@ type Mutation {
   likeTweet(id: Int): LikedTweet
   login(email: String!, password: String!): AuthPayload
   signup(email: String!, name: String, password: String!): AuthPayload
-  updateProfile(avatar: String, bio: String, id: Int, location: String, website: String): Profile
+  updateProfile(avatar: String, bio: String, handle: String, id: Int, wallpaper: String, website: String): Profile
 }
 
 type Profile {
   avatar: String
   bio: String
+  handle: String
   id: Int!
-  location: String
+  wallpaper: String
   website: String
 }
 
