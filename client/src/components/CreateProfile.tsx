@@ -9,12 +9,14 @@ import { customStyles } from "../styles/CustomModalStyles";
 const CREATE_PROFILE_MUTATION = gql`
   mutation createProfile(
     $bio: String
+    $createdAt: String
     $handle: String
     $website: String
     $avatar: String
   ) {
     createProfile(
       bio: $bio
+      createdAt: $createdAt
       handle: $handle
       website: $website
       avatar: $avatar

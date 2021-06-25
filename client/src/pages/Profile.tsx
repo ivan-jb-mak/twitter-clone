@@ -39,11 +39,15 @@ export const ME_QUERY = gql`
       }
       Profile {
         id
+        createdAt
         bio
         handle
         website
         avatar
         wallpaper
+      }
+      Tweet {
+        id
       }
     }
   }
@@ -73,6 +77,7 @@ const Profile = () => {
               </span>
               <span className="nickname">
                 <h3>{data.me.name}</h3>
+                <p>{data.me.Tweet.length} Tweets</p>
               </span>
             </div>
             <div className="avatar">
@@ -93,11 +98,9 @@ const Profile = () => {
             <div className="make-profile">
               {data.me.Profile ? <UpdateProfile /> : <CreateProfile />}
             </div>
-
             <h3 className="name">{data.me.name}</h3>
             <h3 className="name">{data.me.Profile.handle}</h3>
             <h4 className="name">{data.me.Profile.bio}</h4>
-
             {data.me.Profile ? (
               <p>
                 <i className="fas fa-link"> </i>{" "}
@@ -109,6 +112,8 @@ const Profile = () => {
                 </Link>
               </p>
             ) : null}
+            <div>Joined {data.me.Profile.createdAt}</div>
+            {console.log(data.me.Profile.createdAt)}
             <div className="followers">
               <Following />
               <p>384 followers</p>

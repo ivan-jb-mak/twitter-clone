@@ -61,6 +61,7 @@ type Mutation {
 type Profile {
   avatar: String
   bio: String
+  createdAt: DateTime!
   handle: String
   id: Int!
   wallpaper: String
