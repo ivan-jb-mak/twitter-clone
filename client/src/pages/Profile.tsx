@@ -108,9 +108,15 @@ const Profile = () => {
             <div className="make-profile">
               {data.me.Profile ? <UpdateProfile /> : <CreateProfile />}
             </div>
+
             <h3 className="name">{data.me.name}</h3>
-            <h3 className="name">{data.me.Profile.handle}</h3>
-            <h4 className="name">{data.me.Profile.bio}</h4>
+            {data.me.Profile ? (
+              <h3 className="name">{data.me.Profile.handle}</h3>
+            ) : null}
+            {data.me.Profile ? (
+              <h4 className="name">{data.me.Profile.bio}</h4>
+            ) : null}
+
             {data.me.Profile ? (
               <p>
                 <i className="fas fa-link"> </i>{" "}
@@ -122,7 +128,10 @@ const Profile = () => {
                 </Link>
               </p>
             ) : null}
-            <div>Joined {joinedDate(data.me.Profile.createdAt)}</div>
+            {data.me.Profile ? (
+              <div>Joined {joinedDate(data.me.Profile.createdAt)}</div>
+            ) : null}
+
             <div className="followers">
               <Following />
               <p>384 followers</p>
