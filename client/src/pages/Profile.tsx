@@ -60,9 +60,10 @@ const Profile = () => {
 
   const joinedDate = (date: string) => {
     const rawDate = new Date(`${date}`);
-    const year = rawDate.getFullYear();
-    const month = rawDate.toLocaleString("default", { month: "long" });
-    const monthYear = month + " " + year;
+    const monthYear =
+      rawDate.toLocaleString("default", { month: "long" }) +
+      " " +
+      rawDate.getFullYear();
     return monthYear;
   };
 
