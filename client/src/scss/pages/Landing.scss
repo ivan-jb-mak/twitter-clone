@@ -1,0 +1,39 @@
+.main {
+  display: flex;
+
+  .left {
+    height: 100vh;
+    width: 50vw;
+    background-image: url(../../styles/assets/twitter-landing.PNG);
+    background-position: center;
+    background-size: cover;
+  }
+
+  .right {
+    height: 100vh;
+    width: 50vw;
+    background-color: #000000;
+    color: hsl(0, 0%, 100%);
+    margin-left: 0px;
+    .main-heading {
+      font-size: 64px;
+    }
+    .sub-heading {
+      font-size: 31px;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .main {
+    flex-direction: column-reverse;
+    .left {
+      width: 100vw;
+      height: 50vh;
+    }
+    .right {
+      width: 100vw;
+      height: 50vh;
+    }
+  }
+}
