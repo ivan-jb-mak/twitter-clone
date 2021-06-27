@@ -82,7 +82,7 @@ const Login = () => {
             className="password-error"
           />
           <button type="submit" className="login-button">
-            <span>Login</span>
+            <span>Log in</span>
           </button>
         </Form>
       </Formik>
