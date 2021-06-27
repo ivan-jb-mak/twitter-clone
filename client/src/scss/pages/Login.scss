@@ -16,7 +16,7 @@
   color: white;
 
   .main-heading {
-    font-size: 31;
+    font-size: 31px;
     font-family: $landing-header;
   }
 
@@ -24,9 +24,29 @@
     margin-top: 20px;
     width: 35px;
   }
+}
 
-  .form {
-    display: flex;
-    flex-direction: column;
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  .login-field {
+    height: 54.03px;
+    width: 328.03px;
+    background-color: black;
+    border: 1px solid rgb(53, 53, 53);
+    border-radius: 5px;
+  }
+
+  .password-field {
+    height: 54.03px;
+    width: 328.03px;
+    background-color: black;
+    border: 1px solid rgb(53, 53, 53);
+    border-radius: 5px;
+  }
+  .login-button {
+    height: 48px;
   }
 }
