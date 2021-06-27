@@ -45,7 +45,7 @@ const UpdateProfile = () => {
   const [updateProfile] = useMutation(UPDATE_PROFILE, {
     refetchQueries: [{ query: ME_QUERY }],
   });
-  const [modalIsOpon, setIsOpen] = useState(false);
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error.message}</p>;
@@ -91,7 +91,7 @@ const UpdateProfile = () => {
         Edit Profile
       </button>
       <Modal
-        isOpen={modalIsOpon}
+        isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Modal"
         style={customStyles}

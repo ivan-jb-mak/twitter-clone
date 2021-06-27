@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import twitterLogo from "../styles/assets/twitter-logo-white.png";
 // import "../styles/landing.css";
 import "../scss/pages/Landing.scss";
+import SignupModal from "../pages/SignupModal";
 
 const Landing = () => {
   return (
@@ -22,6 +23,8 @@ const Landing = () => {
             <Link to="/login" className="login-btn">
               Log in
             </Link>
+
+            <SignupModal />
           </div>
         </div>
       </div>
