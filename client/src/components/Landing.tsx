@@ -10,20 +10,15 @@ const Landing = () => {
       <div className="left"></div>
       <div className="right">
         <Link to="/">
-          <img
-            src={twitterLogo}
-            alt="twitter-logo"
-            style={{ width: "50px" }}
-            className="logo"
-          />
+          <img src={twitterLogo} alt="twitter-logo" className="logo" />
         </Link>
         <h1 className="main-heading">Happening now</h1>
         <span className="sub-heading">Join Twitter today.</span>
         <div className="buttons">
-          <Link to="/signup" className="btn-sign-up">
+          <Link to="/signup" className="signup-btn">
             Sign up
           </Link>
-          <Link to="/login" className="btn-login">
+          <Link to="/login" className="login-btn">
             Log in
           </Link>
         </div>

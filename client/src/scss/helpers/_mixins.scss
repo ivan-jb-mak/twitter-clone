@@ -1,0 +1,15 @@
+@import "./variables";
+
+// Buttons
+@mixin landing-button {
+  height: 40px;
+  width: 350px;
+  border: 1px solid $primary-color;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 650;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $landing-button;
+}

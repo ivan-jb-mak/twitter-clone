@@ -1,3 +1,6 @@
+@import "../helpers/variables.scss";
+@import "../helpers/mixins.scss";
+
 .main {
   display: flex;
 
@@ -12,14 +15,44 @@
   .right {
     height: 100vh;
     width: 50vw;
-    background-color: #000000;
-    color: hsl(0, 0%, 100%);
+    background-color: $background-color;
+    color: $secondary-color;
     margin-left: 0px;
+    padding-top: 30vh;
+    padding-left: 33px;
+
+    .logo {
+      width: 39px;
+      margin-left: 0px;
+    }
+
     .main-heading {
-      font-size: 64px;
+      font-size: 55px;
+      font-weight: bold;
+      font-family: $landing-header;
     }
     .sub-heading {
-      font-size: 31px;
+      font-size: 28px;
+      font-weight: bold;
+      font-family: $landing-header;
+    }
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 30px;
+
+      .login-btn {
+        @include landing-button;
+        background-color: $background-color;
+        color: $primary-color;
+      }
+
+      .signup-btn {
+        @include landing-button;
+        background-color: $primary-color;
+        color: $secondary-color;
+      }
     }
   }
 }
@@ -34,6 +67,9 @@
     .right {
       width: 100vw;
       height: 50vh;
+      padding-left: 25vw;
+      padding-top: 2px;
+      margin-bottom: 0px;
     }
   }
 }
