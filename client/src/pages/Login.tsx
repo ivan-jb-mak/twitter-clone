@@ -40,14 +40,11 @@ const Login = () => {
   return (
     <div className="container">
       <Link to="/">
-        <img
-          src={twitterLogo}
-          alt="twitter-logo"
-          style={{ width: "50px" }}
-          className="logo"
-        />
+        <img src={twitterLogo} alt="twitter-logo" className="logo" />
       </Link>
-      <h3>Log in to Twitter</h3>
+
+      <h3 className="main-heading">Log in to Twitter</h3>
+
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -61,20 +58,35 @@ const Login = () => {
           history.push("/home");
         }}
       >
-        <Form>
+        <Form className="form">
           <Field
             name="email"
             type="text"
             placeholder="Phone, email, or username"
+            className="login-field"
           />
-          <ErrorMessage name="email" component={"div"} />
-          <Field name="password" type="password" placeholder="Password" />
-          <ErrorMessage name="password" component={"div"} />
+          <ErrorMessage
+            name="email"
+            component={"div"}
+            className="login-error"
+          />
+          <Field
+            name="password"
+            type="password"
+            placeholder="Password"
+            className="password-field"
+          />
+          <ErrorMessage
+            name="password"
+            component={"div"}
+            className="password-error"
+          />
           <button type="submit" className="login-button">
             <span>Login</span>
           </button>
         </Form>
       </Formik>
+
       <div className="register">
         <h4>Forgot password?</h4>
         <Link to="/signup">Sign Up for Twitter</Link>
