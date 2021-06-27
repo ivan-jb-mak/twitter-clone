@@ -59,18 +59,17 @@ const Login = () => {
         }}
       >
         <Form className="form">
-          <ErrorMessage
+          {/* <ErrorMessage
             name="email"
             component={"div"}
             className="login-error"
-          />
+          /> */}
           <Field
             name="email"
             type="text"
             placeholder="Phone, email, or username"
             className="login-field"
           />
-
           <Field
             name="password"
             type="password"
@@ -92,7 +91,7 @@ const Login = () => {
         <Link to="/signup" className="signup">
           Forgot password?
         </Link>
-        <div>.</div>
+        <div style={{ color: "black" }}>..</div>
         <Link to="/signup" className="signup">
           Sign Up for Twitter
         </Link>

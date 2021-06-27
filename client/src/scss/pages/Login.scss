@@ -3,10 +3,16 @@
 
 .container {
   // position: absolute;
+  // top: 0;
+  // left: 0;
+  // height: 100vh;
+  // width: 100vw;
+  position: absolute;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
-  height: 100vh;
-  width: 100vw;
+
   border: 1px solid black;
   display: flex;
   flex-direction: column;
@@ -16,20 +22,20 @@
   color: white;
   overflow: hidden; /* Hide scrollbars */
 
-  .main-heading {
-    font-size: 28px;
-    font-family: $landing-header;
-    margin-left: -80px;
-  }
-
   .logo {
     margin-top: 20px;
     width: 35px;
-    margin-left: -305px;
+    margin-left: -280px;
+  }
+
+  .main-heading {
+    font-size: 28px;
+    font-family: $landing-header;
+    margin-left: -57px;
   }
 
   .register {
-    margin-top: 30px;
+    margin-top: 25px;
     display: flex;
     .signup {
       color: #1b95e0;
@@ -45,6 +51,7 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
+  margin-top: -7px;
 
   .login-field {
     @include login-input;
@@ -54,7 +61,7 @@
     @include login-input;
   }
   .login-button {
-    height: 48px;
+    height: 44px;
     color: hsla(0, 0%, 100%, 0.342);
     background-color: hsla(203, 89%, 53%, 0.616);
   }
