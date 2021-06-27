@@ -17,3 +17,21 @@
 @mixin landing-button-small {
   width: 240px;
 }
+
+// Input fields
+@mixin login-input {
+  // padding: 0%;
+  padding-left: 8px;
+  height: 54.03px;
+  width: 328.03px;
+  color: $secondary-color;
+  background-color: black;
+  border: 1.5px solid rgb(53, 53, 53);
+  border-radius: 5px;
+  font-size: 15px;
+
+  &:focus {
+    outline: none !important;
+    border-color: $primary-color;
+  }
+}

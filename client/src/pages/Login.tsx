@@ -59,28 +59,29 @@ const Login = () => {
         }}
       >
         <Form className="form">
-          <Field
-            name="email"
-            type="text"
-            placeholder="Phone, email, or username"
-            className="login-field"
-          />
           <ErrorMessage
             name="email"
             component={"div"}
             className="login-error"
           />
           <Field
+            name="email"
+            type="text"
+            placeholder="Phone, email, or username"
+            className="login-field"
+          />
+
+          <Field
             name="password"
             type="password"
             placeholder="Password"
             className="password-field"
           />
-          <ErrorMessage
+          {/* <ErrorMessage
             name="password"
             component={"div"}
             className="password-error"
-          />
+          /> */}
           <button type="submit" className="login-button">
             <span>Log in</span>
           </button>
@@ -88,8 +89,13 @@ const Login = () => {
       </Formik>
 
       <div className="register">
-        <h4>Forgot password?</h4>
-        <Link to="/signup">Sign Up for Twitter</Link>
+        <Link to="/signup" className="signup">
+          Forgot password?
+        </Link>
+        <div>.</div>
+        <Link to="/signup" className="signup">
+          Sign Up for Twitter
+        </Link>
       </div>
     </div>
   );
