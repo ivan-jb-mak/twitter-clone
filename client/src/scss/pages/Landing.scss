@@ -47,12 +47,18 @@
         @include landing-button;
         background-color: $background-color;
         color: $primary-color;
+        &:hover {
+          background-color: rgb(24, 24, 24);
+        }
       }
 
       .signup-btn {
         @include landing-button;
         background-color: $primary-color;
         color: $secondary-color;
+        &:hover {
+          background-color: #1b95e0;
+        }
       }
     }
   }
