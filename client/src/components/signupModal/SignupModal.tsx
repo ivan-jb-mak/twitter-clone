@@ -5,8 +5,8 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
 import Modal from "react-modal";
+import { customStyles } from "./SignupModalStyles";
 import twitterLogo from "../styles/assets/twitter-logo-white.png";
-import { customStyles } from "../styles/CustomModalStyles";
 
 const SIGNUP_MUTATION = gql`
   mutation signup($name: String, $email: String!, $password: String!) {
@@ -23,10 +23,9 @@ interface SignupValues {
   name: string;
 }
 
-const SignupModal = () => {
+const SignupModal = ({ modalIsOpen, closeModal }: any) => {
   const history = useHistory();
   const [signup, { data }] = useMutation(SIGNUP_MUTATION);
-  const [modalIsOpen, setIsOpen] = useState(false);
 
   const initialValues: SignupValues = {
     email: "",
@@ -51,16 +50,9 @@ const SignupModal = () => {
       .required("Name Required"),
   });
 
-  const openModal = () => {
-    setIsOpen(true);
-  };
-  const closeModal = () => {
-    setIsOpen(false);
-  };
-
   return (
     <Modal
-      isOpen={true}
+      isOpen={modalIsOpen}
       onRequestClose={closeModal}
       contentLabel="Modal"
       style={customStyles}
@@ -79,17 +71,33 @@ const SignupModal = () => {
           history.push("/home");
         }}
       >
-        <Form>
-          <Field name="email" type="text" placeholder="Email" />
+        <Form className="form">
+          <Field
+            name="email"
+            type="text"
+            placeholder="Email"
+            className="email-field"
+          />
           <ErrorMessage name="email" component={"div"} />
-          <Field name="name" type="text" placeholder="Name" />
+          <Field
+            name="name"
+            type="text"
+            placeholder="Name"
+            className="name-field"
+          />
           <ErrorMessage name="name" component={"div"} />
-          <Field name="password" type="password" placeholder="Password" />
+          <Field
+            name="password"
+            type="password"
+            placeholder="Password"
+            className="password-field"
+          />
           <ErrorMessage name="password" component={"div"} />
           <Field
             name="confirmPassword"
             type="password"
             placeholder="Confirm Password"
+            className="confirm-password-field"
           />
           <ErrorMessage name="confirmPassword" component={"div"} />
           <button type="submit" className="login-button">

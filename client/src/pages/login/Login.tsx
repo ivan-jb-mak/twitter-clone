@@ -1,10 +1,12 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { gql, useMutation } from "@apollo/client";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
-import twitterLogo from "../styles/assets/twitter-logo-white.png";
-import "../scss/pages/Login.scss";
+import twitterLogo from "../../styles/assets/twitter-logo-white.png";
+import SignupModal from "../../components/signupModal/SignupModal";
+import "./Login.scss";
 
 const LOGIN_MUTATION = gql`
   mutation login($email: String!, $password: String!) {
@@ -22,6 +24,7 @@ interface LoginValues {
 const Login = () => {
   const history = useHistory();
   const [login, { data }] = useMutation(LOGIN_MUTATION);
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   const initialValues: LoginValues = {
     email: "",
@@ -36,6 +39,13 @@ const Login = () => {
       .max(20, "Must be 20 characters or less")
       .required("Password Required"),
   });
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+  const closeModal = () => {
+    setIsOpen(false);
+  };
 
   return (
     <div className="container">
@@ -92,9 +102,10 @@ const Login = () => {
           Forgot password?
         </Link>
         <div style={{ color: "black" }}>..</div>
-        <Link to="/signup" className="signup">
+        <Link to="/login" onClick={openModal} className="signup">
           Sign Up for Twitter
         </Link>
+        <SignupModal modalIsOpen={modalIsOpen} closeModal={closeModal} />
       </div>
     </div>
   );

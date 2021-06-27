@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import twitterLogo from "../styles/assets/twitter-logo-white.png";
-// import "../styles/landing.css";
-import "../scss/pages/Landing.scss";
-import SignupModal from "../pages/SignupModal";
+import twitterLogo from "../../styles/assets/twitter-logo-white.png";
+import "./Landing.scss";
+import SignupModal from "../../components/signupModal/SignupModal";
 
 const Landing = () => {
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div className="main">
       <div className="left"></div>
@@ -17,14 +25,13 @@ const Landing = () => {
           <h1 className="main-heading">Happening now</h1>
           <span className="sub-heading">Join Twitter today.</span>
           <div className="buttons">
-            <Link to="/signup" className="signup-btn">
+            <Link to="/" onClick={openModal} className="signup-btn">
               Sign up
             </Link>
             <Link to="/login" className="login-btn">
               Log in
             </Link>
-
-            <SignupModal />
+            <SignupModal modalIsOpen={modalIsOpen} closeModal={closeModal} />
           </div>
         </div>
       </div>

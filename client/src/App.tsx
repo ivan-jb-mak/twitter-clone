@@ -11,9 +11,9 @@ import { setContext } from "apollo-link-context";
 
 // Components
 import Users from "./components/Users";
-import Landing from "./components/Landing";
+import Landing from "./pages/landing/Landing";
 import Signup from "./pages/Signup";
-import Login from "./pages/Login";
+import Login from "./pages/login/Login";
 import Home from "./pages/Home";
 import IsAuthenticated from "./components/IsAuthenticated";
 import Profile from "./pages/Profile";
@@ -51,9 +51,9 @@ function App() {
           <Route exact path="/">
             <Landing />
           </Route>
-          <Route path="/signup">
+          {/* <Route path="/signup">
             <Signup />
-          </Route>
+          </Route> */}
           <Route path="/login">
             <Login />
           </Route>
