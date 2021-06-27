@@ -4,7 +4,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
 import twitterLogo from "../styles/assets/twitter-logo.png";
-import "../styles/login.css";
+import "../scss/pages/Login.scss";
 
 const LOGIN_MUTATION = gql`
   mutation login($email: String!, $password: String!) {

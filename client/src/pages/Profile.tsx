@@ -10,6 +10,7 @@ import PopularTweets from "../components/PopularTweets";
 import UpdateProfile from "../components/UpdateProfile";
 import "../styles/primary.css";
 import "../styles/profile.css";
+import "../scss/pages/Profile.scss";
 
 export const ME_QUERY = gql`
   query me {
