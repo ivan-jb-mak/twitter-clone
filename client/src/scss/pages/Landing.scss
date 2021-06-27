@@ -13,7 +13,7 @@
   }
 
   .right {
-    height: 100vh;
+    height: 70vh;
     width: 50vw;
     background-color: $background-color;
     color: $secondary-color;
@@ -65,11 +65,28 @@
       height: 50vh;
     }
     .right {
-      width: 100vw;
+      width: 75vw;
       height: 50vh;
+      padding: 0%;
       padding-left: 25vw;
       padding-top: 2px;
+      padding-bottom: 40px;
       margin-bottom: 0px;
+      position: relative;
+      .logo {
+        margin-top: 250px;
+      }
+      .buttons {
+        flex-direction: row;
+
+        .login-btn {
+          @include landing-button-small;
+        }
+
+        .signup-btn {
+          @include landing-button-small;
+        }
+      }
     }
   }
 }

@@ -13,3 +13,7 @@
   align-items: center;
   font-family: $landing-button;
 }
+
+@mixin landing-button-small {
+  width: 240px;
+}

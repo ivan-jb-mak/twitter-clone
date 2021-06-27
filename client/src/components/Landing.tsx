@@ -9,18 +9,20 @@ const Landing = () => {
     <div className="main">
       <div className="left"></div>
       <div className="right">
-        <Link to="/">
-          <img src={twitterLogo} alt="twitter-logo" className="logo" />
-        </Link>
-        <h1 className="main-heading">Happening now</h1>
-        <span className="sub-heading">Join Twitter today.</span>
-        <div className="buttons">
-          <Link to="/signup" className="signup-btn">
-            Sign up
+        <div className="wrapper">
+          <Link to="/">
+            <img src={twitterLogo} alt="twitter-logo" className="logo" />
           </Link>
-          <Link to="/login" className="login-btn">
-            Log in
-          </Link>
+          <h1 className="main-heading">Happening now</h1>
+          <span className="sub-heading">Join Twitter today.</span>
+          <div className="buttons">
+            <Link to="/signup" className="signup-btn">
+              Sign up
+            </Link>
+            <Link to="/login" className="login-btn">
+              Log in
+            </Link>
+          </div>
         </div>
       </div>
     </div>
