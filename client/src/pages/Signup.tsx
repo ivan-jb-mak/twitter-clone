@@ -4,7 +4,7 @@ import { gql, useMutation } from "@apollo/client";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
-import twitterLogo from "../styles/assets/twitter-logo.png";
+import twitterLogo from "../styles/assets/twitter-logo-white.png";
 
 const SIGNUP_MUTATION = gql`
   mutation signup($name: String, $email: String!, $password: String!) {

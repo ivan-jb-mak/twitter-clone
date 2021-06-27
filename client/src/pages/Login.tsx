@@ -3,7 +3,7 @@ import { gql, useMutation } from "@apollo/client";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
-import twitterLogo from "../styles/assets/twitter-logo.png";
+import twitterLogo from "../styles/assets/twitter-logo-white.png";
 import "../scss/pages/Login.scss";
 
 const LOGIN_MUTATION = gql`
@@ -47,7 +47,7 @@ const Login = () => {
           className="logo"
         />
       </Link>
-      <h3>Log in to Fake Twitter</h3>
+      <h3>Log in to Twitter</h3>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -62,7 +62,11 @@ const Login = () => {
         }}
       >
         <Form>
-          <Field name="email" type="text" placeholder="Email" />
+          <Field
+            name="email"
+            type="text"
+            placeholder="Phone, email, or username"
+          />
           <ErrorMessage name="email" component={"div"} />
           <Field name="password" type="password" placeholder="Password" />
           <ErrorMessage name="password" component={"div"} />
@@ -72,8 +76,8 @@ const Login = () => {
         </Form>
       </Formik>
       <div className="register">
-        <h4>Don't have an account?</h4>
-        <Link to="/signup">Sign Up</Link>
+        <h4>Forgot password?</h4>
+        <Link to="/signup">Sign Up for Twitter</Link>
       </div>
     </div>
   );
