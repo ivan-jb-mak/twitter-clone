@@ -11,10 +11,19 @@
 
   .fa {
     color: $secondary-color;
+    margin-left: -30px;
   }
 
   .title {
     color: $secondary-color;
     font-size: 20px;
+    font-weight: 500;
+    margin-left: 25px;
+  }
+}
+
+.nav-item {
+  &:hover {
+    color: $primary-color;
   }
 }

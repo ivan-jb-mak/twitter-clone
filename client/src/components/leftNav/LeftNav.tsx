@@ -13,49 +13,51 @@ const LeftNav = () => {
         <img src={favicon} alt="logo" style={{ width: "30px" }} />
       </Link>
       <Link to="/home" className="home-button">
-        <div>
-          <i className="fa fa-home" aria-hidden="true" />{" "}
+        <div className="nav-item">
+          <i className="fa fa-home" aria-hidden="true" />
           <span className="title">Home</span>
         </div>
       </Link>
       <Link to="/home" className="explore-button">
-        <div>
-          <i className="fa fa-home" aria-hidden="true" />{" "}
+        <div className="nav-item">
+          <i className="fa fa-hashtag" aria-hidden="true" />
           <span className="title">Explore</span>
         </div>
       </Link>
       <Link to="/users" className="notifications-button">
-        <div>
+        <div className="nav-item">
           <i className="fa fa-bell" aria-hidden="true" />{" "}
           <span className="title">Notifications</span>
         </div>
       </Link>
       <Link to="/users" className="messages-button">
-        <div>
+        <div className="nav-item">
           <i className="fa fa-envelope" aria-hidden="true" />{" "}
           <span className="title">Messages</span>
         </div>
       </Link>
       <Link to="/home" className="bookmarks-button">
-        <div>
-          <i className="fa fa-home" aria-hidden="true" />{" "}
+        <div className="nav-item">
+          <i className="fa fa-bookmark" aria-hidden="true" />{" "}
           <span className="title">Bookmarks</span>
         </div>
       </Link>
       <Link to="/home" className="lists-button">
-        <div>
-          <i className="fa fa-home" aria-hidden="true" />{" "}
+        <div className="nav-item">
+          <i className="fa fa-list-alt" aria-hidden="true" />{" "}
           <span className="title">Lists</span>
         </div>
       </Link>
       <Link to="/profile" className="profile-button">
-        <div>
+        <div className="nav-item">
           <i className="fa fa-user" aria-hidden="true" />{" "}
-          <span className="title">Profile</span>
+          <span className="title" style={{ marginLeft: "30px" }}>
+            Profile
+          </span>
         </div>
       </Link>
       <Link to="/users" className="more-button">
-        <div>
+        <div className="nav-item">
           <i className="fa fa-ellipsis-h" aria-hidden="true" />{" "}
           <span className="title">More</span>
         </div>
