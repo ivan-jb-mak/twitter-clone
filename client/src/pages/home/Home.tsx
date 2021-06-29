@@ -1,13 +1,13 @@
 import { gql, useQuery } from "@apollo/client";
 import React from "react";
 import { useHistory } from "react-router-dom";
-import AllTweets from "../components/AllTweets";
-import HomePageTweet from "../components/HomePageTweet";
-import LeftNav from "../components/leftNav/LeftNav";
-import PopularTweets from "../components/PopularTweets";
+import AllTweets from "../../components/AllTweets";
+import HomePageTweet from "../../components/HomePageTweet";
+import LeftNav from "../../components/leftNav/LeftNav";
+import PopularTweets from "../../components/PopularTweets";
 // import "../styles/home.css";
 // import "../styles/primary.css";
-import "../scss/layout/MainLayout.scss";
+import "../../scss/layout/MainLayout.scss";
 
 export const ME_QUERY = gql`
   query me {

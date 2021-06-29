@@ -14,7 +14,7 @@ import Users from "./components/Users";
 import Landing from "./pages/landing/Landing";
 import Signup from "./pages/Signup";
 import Login from "./pages/login/Login";
-import Home from "./pages/Home";
+import Home from "./pages/home/Home";
 import IsAuthenticated from "./components/IsAuthenticated";
 import Profile from "./pages/Profile";
 import SingleTweet from "./pages/SingleTweet";
