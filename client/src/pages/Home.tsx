@@ -5,8 +5,9 @@ import AllTweets from "../components/AllTweets";
 import HomePageTweet from "../components/HomePageTweet";
 import LeftNav from "../components/leftNav/LeftNav";
 import PopularTweets from "../components/PopularTweets";
-import "../styles/home.css";
-import "../styles/primary.css";
+// import "../styles/home.css";
+// import "../styles/primary.css";
+import "../scss/layout/MainLayout.scss";
 
 export const ME_QUERY = gql`
   query me {
@@ -33,11 +34,11 @@ const Home = () => {
   if (error) return <p>{error.message}</p>;
   return (
     <>
-      <div className="primary">
+      <div className="primary-layout">
         <div className="left">
           <LeftNav />
         </div>
-        <div className="home">
+        <div className="center">
           <div className="home-header">
             <h3 className="home-title">Home</h3>
           </div>

@@ -5,7 +5,7 @@ import FollowUser from "../components/FollowUser";
 import LeftNav from "../components/leftNav/LeftNav";
 import PopularTweets from "../components/PopularTweets";
 import UnfollowUser from "../components/UnfollowUser";
-import "../styles/primary.css";
+// import "../styles/primary.css";
 import "../styles/profile.css";
 import { ME_QUERY } from "./Profile";
 

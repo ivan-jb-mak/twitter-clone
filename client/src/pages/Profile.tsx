@@ -8,7 +8,7 @@ import LeftNav from "../components/leftNav/LeftNav";
 import LikedTweets from "../components/LikedTweets";
 import PopularTweets from "../components/PopularTweets";
 import UpdateProfile from "../components/UpdateProfile";
-import "../styles/primary.css";
+// import "../styles/primary.css";
 import "../styles/profile.css";
 import "../scss/pages/Profile.scss";
 

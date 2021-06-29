@@ -5,7 +5,7 @@ import CreateReply from "../components/CreateReply";
 import LeftNav from "../components/leftNav/LeftNav";
 import PopularTweets from "../components/PopularTweets";
 import "../styles/home.css";
-import "../styles/primary.css";
+// import "../styles/primary.css";
 
 export const TWEET_QUERY = gql`
   query tweet($id: Int) {

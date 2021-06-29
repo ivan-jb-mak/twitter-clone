@@ -1,20 +1,24 @@
 .primary {
   display: grid;
   grid-template-columns: 0.7fr 1.3fr 0.9fr;
-  margin-right: 50px;
-  margin-left: 50px;
+  /* margin-right: 50px; */
+  /* margin-left: 50px; */
   margin-bottom: 50px;
   @media only screen and (max-width: 600px) {
     display: flex;
-
     margin-right: 0px;
     margin-left: 0px;
   }
 }
+
 /* @media only screen and (max-width: 1200px) {
         grid-template-columns: 1fr 5fr;
     } */
 .left {
+  position: sticky;
+  top: 0;
+  position: fixed;
+  /* position: sticky; */
   grid-column: 1 / 2;
   /* margin-top: 20px; */
   /* margin-left: 40px; */
@@ -25,10 +29,10 @@
     margin: 0;
   }
 }
-/* .left div {
-  position: sticky;
-  top: 0;
-} */
+.home {
+  grid-column: 2/3;
+}
+
 .right {
   grid-column: 3/ 4;
   margin-left: 20px;
@@ -43,6 +47,7 @@
 .right div {
   position: sticky;
   top: 0;
+  height: 600vh;
 }
 
 .drop-down {
