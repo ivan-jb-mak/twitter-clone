@@ -105,7 +105,7 @@ const SignupModal = ({ modalIsOpen, closeModal }: any) => {
             className="confirm-password-field"
           />
           {/* <ErrorMessage name="confirmPassword" component={"div"} /> */}
-          <button type="submit" className="login-button">
+          <button type="submit" className="signup-button">
             <span>Sign up</span>
           </button>
         </Form>

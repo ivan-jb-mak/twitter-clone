@@ -38,8 +38,14 @@
     width: 100%;
   }
 
-  .login-button {
+  .signup-button {
     height: 38px;
     margin-top: 75px;
+    border: none;
+    border-radius: 25px;
+    background-color: $primary-color;
+    color: $secondary-color;
+    font-size: 15px;
+    font-weight: 600;
   }
 }
