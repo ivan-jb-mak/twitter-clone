@@ -12,6 +12,9 @@
   .fa {
     color: $secondary-color;
     margin-left: -30px;
+    // &:hover {
+    //   color: $primary-color;
+    // }
   }
 
   .title {
@@ -19,11 +22,22 @@
     font-size: 20px;
     font-weight: 500;
     margin-left: 25px;
+    // &:hover {
+    //   color: $primary-color;
+    // }
   }
-}
 
-.nav-item {
-  &:hover {
-    color: $primary-color;
+  // .title:hover ~ .fa {
+  //   color: $primary-color;
+  // }
+
+  // .fa:hover ~ .title {
+  //   color: $primary-color;
+  // }
+
+  .nav-item2 {
+    &:hover {
+      color: blue;
+    }
   }
 }
