@@ -2,7 +2,19 @@
 @import "../../scss/helpers/mixins";
 
 .nav-container {
-  background-color: white;
+  background-color: rgb(0, 0, 0);
   margin-left: 0px;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .fa {
+    color: $secondary-color;
+  }
+
+  .title {
+    color: $secondary-color;
+    font-size: 20px;
+  }
 }

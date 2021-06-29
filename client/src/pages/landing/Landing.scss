@@ -44,21 +44,20 @@
       margin-top: 30px;
 
       .login-btn {
-        @include landing-button;
+        @include primary-button;
+        height: 40px;
+        width: 350px;
         background-color: $background-color;
         color: $primary-color;
         &:hover {
-          background-color: rgb(144, 138, 138);
+          background-color: rgba(20, 20, 20, 0.801);
         }
       }
 
       .signup-btn {
-        @include landing-button;
-        background-color: $primary-color;
-        color: $secondary-color;
-        &:hover {
-          background-color: #1b95e0;
-        }
+        @include primary-button;
+        height: 40px;
+        width: 350px;
       }
     }
   }
@@ -87,11 +86,11 @@
         flex-direction: row;
 
         .login-btn {
-          @include landing-button-small;
+          @include primary-button-small;
         }
 
         .signup-btn {
-          @include landing-button-small;
+          @include primary-button-small;
         }
       }
     }
