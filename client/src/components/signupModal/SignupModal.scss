@@ -2,8 +2,9 @@
 @import "../../scss/helpers/mixins";
 
 .logo {
-  width: 30px;
-  margin-left: 250px;
+  width: 25px;
+  margin-left: 230px;
+  margin-top: 10px;
 }
 
 .signup-header {
@@ -18,27 +19,27 @@
   gap: 25px;
 
   .email-field {
-    @include login-input;
+    @include form-input-fields;
     width: 100%;
   }
 
   .name-field {
-    @include login-input;
+    @include form-input-fields;
     width: 100%;
   }
 
   .password-field {
-    @include login-input;
+    @include form-input-fields;
     width: 100%;
   }
 
   .confirm-password-field {
-    @include login-input;
+    @include form-input-fields;
     width: 100%;
   }
 
   .login-button {
     height: 38px;
-    margin-top: 85px;
+    margin-top: 75px;
   }
 }

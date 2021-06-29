@@ -54,11 +54,11 @@
   margin-top: -7px;
 
   .login-field {
-    @include login-input;
+    @include form-input-fields;
   }
 
   .password-field {
-    @include login-input;
+    @include form-input-fields;
   }
   .login-button {
     height: 44px;
