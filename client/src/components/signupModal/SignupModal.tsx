@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 import Modal from "react-modal";
 import { customStyles } from "./SignupModalStyles";
 import twitterLogo from "../styles/assets/twitter-logo-white.png";
+import "./SignupModal.scss";
 
 const SIGNUP_MUTATION = gql`
   mutation signup($name: String, $email: String!, $password: String!) {
@@ -71,7 +72,7 @@ const SignupModal = ({ modalIsOpen, closeModal }: any) => {
           history.push("/home");
         }}
       >
-        <Form className="form">
+        <Form className="signup-form">
           <Field
             name="email"
             type="text"

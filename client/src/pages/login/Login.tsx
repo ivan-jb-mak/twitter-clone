@@ -68,7 +68,7 @@ const Login = () => {
           history.push("/home");
         }}
       >
-        <Form className="form">
+        <Form className="login-form">
           {/* <ErrorMessage
             name="email"
             component={"div"}
