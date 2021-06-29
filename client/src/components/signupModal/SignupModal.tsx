@@ -6,7 +6,7 @@ import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
 import Modal from "react-modal";
 import { customStyles } from "./SignupModalStyles";
-import twitterLogo from "../styles/assets/twitter-logo-white.png";
+import twitterLogo from "../../styles/assets/twitter-logo-white.png";
 import "./SignupModal.scss";
 
 const SIGNUP_MUTATION = gql`
@@ -59,6 +59,10 @@ const SignupModal = ({ modalIsOpen, closeModal }: any) => {
       style={customStyles}
       ariaHideApp={false}
     >
+      <Link to="/">
+        <img src={twitterLogo} alt="twitter-logo" className="logo" />
+      </Link>
+      <h3 className="signup-header">Create your account</h3>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -79,28 +83,28 @@ const SignupModal = ({ modalIsOpen, closeModal }: any) => {
             placeholder="Email"
             className="email-field"
           />
-          <ErrorMessage name="email" component={"div"} />
+          {/* <ErrorMessage name="email" component={"div"} /> */}
           <Field
             name="name"
             type="text"
             placeholder="Name"
             className="name-field"
           />
-          <ErrorMessage name="name" component={"div"} />
+          {/* <ErrorMessage name="name" component={"div"} /> */}
           <Field
             name="password"
             type="password"
             placeholder="Password"
             className="password-field"
           />
-          <ErrorMessage name="password" component={"div"} />
+          {/* <ErrorMessage name="password" component={"div"} /> */}
           <Field
             name="confirmPassword"
             type="password"
             placeholder="Confirm Password"
             className="confirm-password-field"
           />
-          <ErrorMessage name="confirmPassword" component={"div"} />
+          {/* <ErrorMessage name="confirmPassword" component={"div"} /> */}
           <button type="submit" className="login-button">
             <span>Sign up</span>
           </button>

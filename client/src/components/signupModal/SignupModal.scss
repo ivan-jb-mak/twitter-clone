@@ -1,4 +1,44 @@
+@import "../../scss/helpers/variables";
+@import "../../scss/helpers/mixins";
+
+.logo {
+  width: 30px;
+  margin-left: 250px;
+}
+
+.signup-header {
+  color: $secondary-color;
+  font-family: $landing-button;
+  font-size: 21px;
+}
+
 .signup-form {
   display: flex;
   flex-direction: column;
+  gap: 25px;
+
+  .email-field {
+    @include login-input;
+    width: 100%;
+  }
+
+  .name-field {
+    @include login-input;
+    width: 100%;
+  }
+
+  .password-field {
+    @include login-input;
+    width: 100%;
+  }
+
+  .confirm-password-field {
+    @include login-input;
+    width: 100%;
+  }
+
+  .login-button {
+    height: 38px;
+    margin-top: 85px;
+  }
 }
