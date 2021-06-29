@@ -2,7 +2,7 @@ import { gql, useQuery } from "@apollo/client";
 import React from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import FollowUser from "../components/FollowUser";
-import LeftNav from "../components/LeftNav";
+import LeftNav from "../components/leftNav/LeftNav";
 import PopularTweets from "../components/PopularTweets";
 import UnfollowUser from "../components/UnfollowUser";
 import "../styles/primary.css";

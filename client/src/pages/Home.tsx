@@ -3,7 +3,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import AllTweets from "../components/AllTweets";
 import HomePageTweet from "../components/HomePageTweet";
-import LeftNav from "../components/LeftNav";
+import LeftNav from "../components/leftNav/LeftNav";
 import PopularTweets from "../components/PopularTweets";
 import "../styles/home.css";
 import "../styles/primary.css";

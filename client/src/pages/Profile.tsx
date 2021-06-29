@@ -4,7 +4,7 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import CreateProfile from "../components/CreateProfile";
 import Following from "../components/Following";
-import LeftNav from "../components/LeftNav";
+import LeftNav from "../components/leftNav/LeftNav";
 import LikedTweets from "../components/LikedTweets";
 import PopularTweets from "../components/PopularTweets";
 import UpdateProfile from "../components/UpdateProfile";

@@ -1,0 +1,9 @@
+@import "../../scss/helpers/variables";
+@import "../../scss/helpers/mixins";
+
+.nav-container {
+  background-color: $background-color;
+  width: 100%;
+  height: 100vh;
+  border: 2px solid red;
+}

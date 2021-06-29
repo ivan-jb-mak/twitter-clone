@@ -2,7 +2,7 @@ import { gql, useQuery } from "@apollo/client";
 import React from "react";
 import { useHistory, useParams } from "react-router-dom";
 import CreateReply from "../components/CreateReply";
-import LeftNav from "../components/LeftNav";
+import LeftNav from "../components/leftNav/LeftNav";
 import PopularTweets from "../components/PopularTweets";
 import "../styles/home.css";
 import "../styles/primary.css";

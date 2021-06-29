@@ -88,7 +88,7 @@ const UpdateProfile = () => {
   return (
     <div>
       <button onClick={openModal} className="edit-button">
-        Edit Profile
+        Set up profile
       </button>
       <Modal
         isOpen={modalIsOpen}
