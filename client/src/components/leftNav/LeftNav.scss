@@ -35,9 +35,10 @@
   //   color: $primary-color;
   // }
 
-  .nav-item2 {
-    &:hover {
-      color: blue;
-    }
+  .nav-item:hover .fa {
+    color: $primary-color;
+  }
+  .nav-item:hover .title {
+    color: $primary-color;
   }
 }
